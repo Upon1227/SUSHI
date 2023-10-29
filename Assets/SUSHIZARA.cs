@@ -2,15 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using Unity.VisualScripting;
+
 public class SUSHIZARA : MonoBehaviour
 {
-    [SerializeField] GameObject[] routepoints;
+    public List<GameObject> routepoints = new List<GameObject>();
     [SerializeField] float speed;
     bool isconmplete = false;
+    public float time;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(movepoint());
+    }
+
+    public void Add(List<GameObject> s)
+    {
+        foreach(GameObject route in s)
+        {
+            routepoints.Add(route);
+        }
     }
 
     IEnumerator movepoint()
@@ -30,6 +41,6 @@ public class SUSHIZARA : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        time += Time.deltaTime;
     }
 }
