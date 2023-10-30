@@ -21,7 +21,6 @@ public class SEKIManager : MonoBehaviour
         yield return new WaitForSeconds(waittime);
         Debug.Log("Start!");
         string textname = "./Assets/TextData" + gameObject.name + ".txt";
-        File.WriteAllText(textname, "");
         customerNum = Random.Range(0, 7);
         maxeatcount = Random.Range(5 * customerNum, 12 * customerNum);
         StartCoroutine(UpdateTime());
@@ -44,6 +43,7 @@ public class SEKIManager : MonoBehaviour
         yield return new WaitForSeconds(waittime);
         customerNum = Random.Range(0, 7);
         maxeatcount = Random.Range(5 * customerNum, 12 * customerNum);
+        StartCoroutine(UpdateTime());
         for (int i = 0; i < customerNum; i++)
         {
             sushiselect();
@@ -59,6 +59,10 @@ public class SEKIManager : MonoBehaviour
             {
                 int waittime = Random.Range(100, 600);
                 StartCoroutine(re(waittime));
+                eatsushicount = 0;
+                sushiWant.Clear();
+                maxeatcount = 0;
+                break;
             }
             for(int i = 0;i < sushiWant.Count; i++)
             {
@@ -73,7 +77,8 @@ public class SEKIManager : MonoBehaviour
         }
     }
 
-    
+    bool compwrite;
+    bool addsushicomp;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -83,8 +88,10 @@ public class SEKIManager : MonoBehaviour
             Debug.Log("hit");
             if(i % 2 == 0)
             {
-                if (collision.gameObject.CompareTag(sushiwantname))
+                if (collision.gameObject.CompareTag(sushiwantname) && compwrite == false && addsushicomp == false)
                 {
+                    compwrite = true;
+                    addsushicomp = true;
                     SUSHIZARA sUSHIZARA = collision.gameObject.GetComponent<SUSHIZARA>();
                     writeTex(sushiwantname, ((int)sUSHIZARA.time).ToString(), sushiWant[i + 1]);
                     Destroy(collision.gameObject);
@@ -105,19 +112,63 @@ public class SEKIManager : MonoBehaviour
     {
         int waittime = Random.Range(5, 15);
         yield return new WaitForSeconds(waittime);
+        addsushicomp = false;
         sushiselect();
     }
 
     void sushiselect()
     {
-        int selectsushinum = Random.Range(0, sushiKind.Count);
-        sushiWant.Add(sushiKind[selectsushinum]);
-        sushiWant.Add("0");
+        if(eatsushicount < maxeatcount)
+        {
+            int selectsushinum = Random.Range(0, sushiKind.Count * 10);
+            if(selectsushinum <= 2)
+            {
+                sushiWant.Add(sushiKind[9]);
+            }
+            else if (selectsushinum > 2 && selectsushinum <= 17)
+            {
+                sushiWant.Add(sushiKind[0]);
+            }
+            else if(selectsushinum > 17 && selectsushinum <= 32)
+            {
+                sushiWant.Add(sushiKind[1]);
+            }
+            else if(selectsushinum > 32 && selectsushinum <= 47)
+            {
+                sushiWant.Add(sushiKind[2]);
+            }
+            else if(selectsushinum > 47 && selectsushinum <= 62)
+            {
+                sushiWant.Add(sushiKind[3]);
+            }
+            else if (selectsushinum > 62 && selectsushinum <= 74)
+            {
+                sushiWant.Add(sushiKind[4]);
+            }
+            else if (selectsushinum > 74 && selectsushinum <= 84)
+            {
+                sushiWant.Add(sushiKind[5]);
+            }
+            else if (selectsushinum > 84 && selectsushinum <= 92)
+            {
+                sushiWant.Add(sushiKind[6]);
+            }
+            else if (selectsushinum > 92 && selectsushinum <= 97)
+            {
+                sushiWant.Add(sushiKind[7]);
+            }
+            else if (selectsushinum > 97 && selectsushinum <= 100)
+            {
+                sushiWant.Add(sushiKind[8]);
+            }
+            sushiWant.Add("0");
+        }
     }
 
     void writeTex(string sushiname, string sushitime,string waittime)
     {
         result.Add(sushicount.ToString() + ":" +  sushiname + ":" + waittime, sushitime);
+        compwrite = false;
     }
 
     void OnApplicationQuit()

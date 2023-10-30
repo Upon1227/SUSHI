@@ -217,7 +217,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7125394}
+  m_Size: {x: 0.78, y: 1.7125394}
   m_EdgeRadius: 0
 --- !u!114 &37856544
 MonoBehaviour:
@@ -244,6 +244,8 @@ MonoBehaviour:
   - "\u3042\u3076\u308A\u30B5\u30FC\u30E2\u30F3"
   - "\u9BDB"
   sushiWant: []
+  eatsushicount: 0
+  maxeatcount: 0
 --- !u!212 &37856545
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -463,7 +465,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7125394}
+  m_Size: {x: 0.78, y: 1.7125394}
   m_EdgeRadius: 0
 --- !u!114 &138781531
 MonoBehaviour:
@@ -490,6 +492,8 @@ MonoBehaviour:
   - "\u3042\u3076\u308A\u30B5\u30FC\u30E2\u30F3"
   - "\u9BDB"
   sushiWant: []
+  eatsushicount: 0
+  maxeatcount: 0
 --- !u!212 &138781532
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -678,7 +682,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7125394}
+  m_Size: {x: 0.78, y: 1.7125394}
   m_EdgeRadius: 0
 --- !u!114 &197143000
 MonoBehaviour:
@@ -705,6 +709,8 @@ MonoBehaviour:
   - "\u3042\u3076\u308A\u30B5\u30FC\u30E2\u30F3"
   - "\u9BDB"
   sushiWant: []
+  eatsushicount: 0
+  maxeatcount: 0
 --- !u!212 &197143001
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -893,7 +899,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7125394}
+  m_Size: {x: 0.78, y: 1.7125394}
   m_EdgeRadius: 0
 --- !u!114 &296545430
 MonoBehaviour:
@@ -920,6 +926,8 @@ MonoBehaviour:
   - "\u3042\u3076\u308A\u30B5\u30FC\u30E2\u30F3"
   - "\u9BDB"
   sushiWant: []
+  eatsushicount: 0
+  maxeatcount: 0
 --- !u!212 &296545431
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1250,6 +1258,8 @@ MonoBehaviour:
   - "\u3042\u3076\u308A\u30B5\u30FC\u30E2\u30F3"
   - "\u9BDB"
   sushiWant: []
+  eatsushicount: 0
+  maxeatcount: 0
 --- !u!61 &466317793
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1293,7 +1303,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7125394}
+  m_Size: {x: 0.78, y: 1.7125394}
   m_EdgeRadius: 0
 --- !u!50 &466317794
 Rigidbody2D:
@@ -1508,7 +1518,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7125394}
+  m_Size: {x: 0.78, y: 1.7125394}
   m_EdgeRadius: 0
 --- !u!114 &534500175
 MonoBehaviour:
@@ -1535,6 +1545,8 @@ MonoBehaviour:
   - "\u3042\u3076\u308A\u30B5\u30FC\u30E2\u30F3"
   - "\u9BDB"
   sushiWant: []
+  eatsushicount: 0
+  maxeatcount: 0
 --- !u!212 &534500176
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1940,7 +1952,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7125394}
+  m_Size: {x: 0.78, y: 1.7125394}
   m_EdgeRadius: 0
 --- !u!114 &1014909249
 MonoBehaviour:
@@ -1967,6 +1979,8 @@ MonoBehaviour:
   - "\u3042\u3076\u308A\u30B5\u30FC\u30E2\u30F3"
   - "\u9BDB"
   sushiWant: []
+  eatsushicount: 0
+  maxeatcount: 0
 --- !u!212 &1014909250
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2139,8 +2153,8 @@ Transform:
   m_GameObject: {fileID: 1030183632}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.7304, y: 4.2435, z: 59.23}
-  m_LocalScale: {x: 127.77265, y: 6.2527423, z: 1}
+  m_LocalPosition: {x: 9.68955, y: 4.24342, z: 59.23}
+  m_LocalScale: {x: 127.6679, y: 6.2800026, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2481,7 +2495,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7125394}
+  m_Size: {x: 0.78, y: 1.7125394}
   m_EdgeRadius: 0
 --- !u!114 &1298082333
 MonoBehaviour:
@@ -2508,6 +2522,8 @@ MonoBehaviour:
   - "\u3042\u3076\u308A\u30B5\u30FC\u30E2\u30F3"
   - "\u9BDB"
   sushiWant: []
+  eatsushicount: 0
+  maxeatcount: 0
 --- !u!212 &1298082334
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2696,7 +2712,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7125394}
+  m_Size: {x: 0.78, y: 1.7125394}
   m_EdgeRadius: 0
 --- !u!114 &1314395194
 MonoBehaviour:
@@ -2723,6 +2739,8 @@ MonoBehaviour:
   - "\u3042\u3076\u308A\u30B5\u30FC\u30E2\u30F3"
   - "\u9BDB"
   sushiWant: []
+  eatsushicount: 0
+  maxeatcount: 0
 --- !u!212 &1314395195
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3181,7 +3199,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7125394}
+  m_Size: {x: 0.78, y: 1.7125394}
   m_EdgeRadius: 0
 --- !u!114 &1636101031
 MonoBehaviour:
@@ -3208,6 +3226,8 @@ MonoBehaviour:
   - "\u3042\u3076\u308A\u30B5\u30FC\u30E2\u30F3"
   - "\u9BDB"
   sushiWant: []
+  eatsushicount: 0
+  maxeatcount: 0
 --- !u!212 &1636101032
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3396,7 +3416,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7125394}
+  m_Size: {x: 0.78, y: 1.7125394}
   m_EdgeRadius: 0
 --- !u!114 &1735828483
 MonoBehaviour:
@@ -3423,6 +3443,8 @@ MonoBehaviour:
   - "\u3042\u3076\u308A\u30B5\u30FC\u30E2\u30F3"
   - "\u9BDB"
   sushiWant: []
+  eatsushicount: 0
+  maxeatcount: 0
 --- !u!212 &1735828484
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3750,8 +3772,8 @@ Transform:
   m_GameObject: {fileID: 1942859735}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.7365, y: -4.4495, z: 59.23}
-  m_LocalScale: {x: 127.77111, y: 6.3317904, z: 1}
+  m_LocalPosition: {x: 9.7417, y: -4.4501, z: 59.23}
+  m_LocalScale: {x: 127.76601, y: 6.33057, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -3934,7 +3956,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.7125394}
+  m_Size: {x: 0.78, y: 1.7125394}
   m_EdgeRadius: 0
 --- !u!114 &2113846392
 MonoBehaviour:
@@ -3961,6 +3983,8 @@ MonoBehaviour:
   - "\u3042\u3076\u308A\u30B5\u30FC\u30E2\u30F3"
   - "\u9BDB"
   sushiWant: []
+  eatsushicount: 0
+  maxeatcount: 0
 --- !u!212 &2113846393
 SpriteRenderer:
   m_ObjectHideFlags: 0
