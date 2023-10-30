@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class SARAADD : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class SARAADD : MonoBehaviour
     [SerializeField] string[] tagsname;
     [SerializeField] Color[] colors;
     bool isDontAdd;
+    int haikinum;
     private void Start()
     {
         StartCoroutine(addSara());
@@ -39,6 +41,27 @@ public class SARAADD : MonoBehaviour
         {
             isDontAdd = true;
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.name == "sara(Clone)")
+        {
+            SUSHIZARA sushizara = collision.gameObject.GetComponent<SUSHIZARA>();
+            float sushitime = sushizara.time;
+            if((int)sushitime >= 7200)
+            {
+                Destroy(collision.gameObject);
+                haikinum++;
+            }
+        }
+    }
+
+    void OnApplicationQuit()
+    {
+        string textname = "./Assets/haiki.txt";
+        File.AppendAllText(textname,haikinum.ToString());
+        
     }
 
     private void OnTriggerExit2D(Collider2D collision)
