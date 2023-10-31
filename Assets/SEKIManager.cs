@@ -21,6 +21,7 @@ public class SEKIManager : MonoBehaviour
         yield return new WaitForSeconds(waittime);
         Debug.Log("Start!");
         string textname = "./Assets/TextData" + gameObject.name + ".txt";
+        File.WriteAllText(textname,"");
         customerNum = Random.Range(0, 7);
         maxeatcount = Random.Range(5 * customerNum, 12 * customerNum);
         StartCoroutine(UpdateTime());
@@ -93,7 +94,7 @@ public class SEKIManager : MonoBehaviour
                     compwrite = true;
                     addsushicomp = true;
                     SUSHIZARA sUSHIZARA = collision.gameObject.GetComponent<SUSHIZARA>();
-                    writeTex(sushiwantname, ((int)sUSHIZARA.time).ToString(), sushiWant[i + 1]);
+                    writeTex(sushiwantname, sUSHIZARA.time.ToString(), sushiWant[i + 1]);
                     Destroy(collision.gameObject);
                     eatsushicount++;
                     sushicount++;
@@ -167,7 +168,7 @@ public class SEKIManager : MonoBehaviour
 
     void writeTex(string sushiname, string sushitime,string waittime)
     {
-        result.Add(sushicount.ToString() + ":" +  sushiname + ":" + waittime, sushitime);
+        result.Add(sushicount.ToString() + ":" +  sushiname + ":" + sushitime, waittime);
         compwrite = false;
     }
 
