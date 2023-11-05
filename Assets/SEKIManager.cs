@@ -15,7 +15,9 @@ public class SEKIManager : MonoBehaviour
     int eatsushicount = 0;
     [SerializeField]
     int maxeatcount;
-
+    public bool isEnmpty = true;
+    [SerializeField]
+    SARAADD saraad;
     IEnumerator StartCus(int waittime)
     {
         yield return new WaitForSeconds(waittime);
@@ -23,6 +25,14 @@ public class SEKIManager : MonoBehaviour
         string textname = "./Assets/TextData" + gameObject.name + ".txt";
         File.WriteAllText(textname,"");
         customerNum = Random.Range(0, 7);
+        if(customerNum == 0)
+        {
+            isEnmpty = true;
+        }
+        else
+        {
+            isEnmpty = false;
+        }
         maxeatcount = Random.Range(5 * customerNum, 12 * customerNum);
         StartCoroutine(UpdateTime());
         for (int i = 0; i < customerNum; i++)
@@ -43,6 +53,14 @@ public class SEKIManager : MonoBehaviour
         customerNum = 0;
         yield return new WaitForSeconds(waittime);
         customerNum = Random.Range(0, 7);
+        if (customerNum == 0)
+        {
+            isEnmpty = true;
+        }
+        else
+        {
+            isEnmpty = false;
+        }
         maxeatcount = Random.Range(5 * customerNum, 12 * customerNum);
         StartCoroutine(UpdateTime());
         for (int i = 0; i < customerNum; i++)
@@ -65,11 +83,17 @@ public class SEKIManager : MonoBehaviour
                 maxeatcount = 0;
                 break;
             }
-            for(int i = 0;i < sushiWant.Count; i++)
+            for (int i = 0; i < sushiWant.Count; i++)
             {
-                if(i % 2 != 0)
+
+                if (i % 2 != 0)
                 {
                     int time = int.Parse(sushiWant[i]);
+                    if (time == 200 || time == 600 || time == 800 || time == 1000)
+                    {
+                        //youkyuu
+                        saraad.WantSushiAdd(sushiWant[i - 1]);
+                    }
                     time++;
                     sushiWant[i] = time.ToString();
                 }
